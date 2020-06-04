@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/Amplitude.Unity.Simulation.SimulationDescriptor.xsd">
+    <SimulationDescriptor Name="HackingProgramEffectInstantIncreasePPAllocation" Type="HackingProgramEffect">
+        <!-- 0.1 -->
+        <Modifier TargetProperty="FinalProcessingPowerAllocation" Operation="Percent" Value="0.25" Path="../ClassEmpire/ClassHacking/ClassHackingProgram" TooltipOverride="%HackingOffensiveProgramIncreasedPPAllocationEffectOverride"/>
+    </SimulationDescriptor>
+
+    <SimulationDescriptor Name="HackingProgramEffectHackingDefense" Type="HackingProgramEffect">
+        <!-- 1 -->
+        <Modifier TargetProperty="HackingOperationOutcomeDefenseLevel" Operation="Addition" Value="1.5" TooltipOverride="%HackingProgramEffectHackingDefenseEffectOverride"/>
+    </SimulationDescriptor>
+
+    <SimulationDescriptor Name="HackingProgramEffectSpeedupHacking" Type="HackingProgramEffect">
+        <Modifier TargetProperty="HackingSpeedMultiplierForSelf" Operation="Addition" Value="0.75"/><!-- 0.3 -->
+    </SimulationDescriptor>
+    
+    <SimulationDescriptor Name="HackingProgramEffectSpeedupHackingOperation" Type="HackingProgramEffect">
+        <Modifier TargetProperty="HackingNodeSpeed"     Operation="Percent" Value="0.5"/><!-- 0.3 -->
+        <Modifier TargetProperty="HackingWarpSpeed"     Operation="Percent" Value="0.75" TooltipHidden="true"/><!-- 0.3 -->
+        <Modifier TargetProperty="HackingNonWarpSpeed"  Operation="Percent" Value="0.75" TooltipHidden="true"/><!-- 0.3 -->
+    </SimulationDescriptor>
+
+    <SimulationDescriptor Name="HackingProgramEffectSlowDownHacking" Type="HackingProgramEffect">
+        <Modifier TargetProperty="HackingSpeedMultiplierForOthers" Operation="Subtraction" Value="0.75"/><!-- 0.5 -->
+    </SimulationDescriptor>
+
+    <SimulationDescriptor Name="HackingProgramEffectSlowndownTrace" Type="HackingProgramEffect">
+        <Modifier TargetProperty="HackingNodeSpeed" Operation="Percent" Value="-0.4"/><!-- -0.25 -->
+    </SimulationDescriptor>
+
+    <SimulationDescriptor Name="HackingProgramEffectDecreaseHackerPPAllocation" Type="HackingProgramEffect">
+        <!-- 0.3 -->
+        <Modifier TargetProperty="FinalProcessingPowerAllocation" Operation="Percent" Value="-0.5" Path="ClassEmpire/ClassHacking/!CostCannotBeBoostedByPrograms,ClassHackingProgram"/>
+    </SimulationDescriptor>
+
+    <SimulationDescriptor Name="HackingProgramEffectIncreaseHackerPPAllocation" Type="HackingProgramEffect">
+        <!-- 0.3 -->
+        <Modifier TargetProperty="FinalProcessingPowerAllocation" Operation="Percent" Value="0.5" Path="ClassEmpire/ClassHacking/!CostCannotBeBoostedByPrograms,ClassHackingProgram"/>
+    </SimulationDescriptor>
+</Datatable>

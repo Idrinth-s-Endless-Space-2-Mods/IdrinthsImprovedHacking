@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/Amplitude.Unity.Simulation.SimulationDescriptor.xsd">
+    <SimulationDescriptor Name="FactionTraitIdrinthEmpireTraitorBonus" Type="FactionTrait" IsSerializable="false">
+        <BinaryModifier TargetProperty="NetEmpireResearch" Operation="Addition" Left="2.5" BinaryOperation="Multiplication" Right="${TraitorsCount}" Path="ClassEmpire"/>
+        <BinaryModifier TargetProperty="NetEmpireMoney" Operation="Addition" Left="0.5" BinaryOperation="Multiplication" Right="${TraitorsCount}" Path="ClassEmpire"/>
+    </SimulationDescriptor>
+</Datatable>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Registry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Gameplay>
+        <Hacking>
+            <!-- 10 + 10 * Property(Empire,@'ClassEmpire/ClassHacking',BeaconCount) -->
+            <BeaconProcessingPowerAllocation>25 + 5 * Property(Empire,@'ClassEmpire/ClassHacking',BeaconCount)</BeaconProcessingPowerAllocation>
+            <BeaconForbiddenSpecialNodeCategories>CategorySpecialNodeVaulters</BeaconForbiddenSpecialNodeCategories>
+            <MinorAndPirateHackingUnlockTurn>5</MinorAndPirateHackingUnlockTurn><!-- 15 -->
+            <HackingLaneProgressMultiplier>50</HackingLaneProgressMultiplier><!-- 40 -->
+        </Hacking>
+    </Gameplay>
+</Registry>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/FactionTrait.xsd">
+    <FactionTrait Name="FactionTraitIdrinthEmpireTraitorBonus" SubCategory="FactionTrait" TraitCategory="TraitCategoryPopulation" TraitSubCategory="TraitSubCategoryStartAmoeba" Family="FactionTraitFamilyStartingMinorPopulation" Hidden="false" Custom="false" Cost="0">
+        <SimulationDescriptorReference Name="FactionTraitIdrinthEmpireTraitorBonus"/>
+    </FactionTrait>
+</Datatable>

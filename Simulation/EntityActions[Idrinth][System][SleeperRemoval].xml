@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/EntityActionDefinition.xsd">
+    <!-- System traitors actions. -->
+    <ClearPopulationTraitorStatusSystemAction Name="RemoveTraitorsSystemAction" Duration="15" TraitorsRemovedPerTick="0.2"><!-- 5 -->
+
+        <EntityPrerequisites Location="Self">
+            <PathPrerequisite Flags="Discard">ColonizedStarSystemStateColony</PathPrerequisite>
+            <PathPrerequisite Flags="ActionInProgress" Inverted="true">StarSystemActionRemoveTraitors</PathPrerequisite>
+        </EntityPrerequisites>
+
+        <EntityModifiers Location="Self">
+            <SimulationAlteration DescriptorReference="StarSystemActionRemoveTraitors"/>
+        </EntityModifiers>
+        
+        <DownloadableContentPrerequisite Flags="Prerequisite,Discard,UnlockAvailability">DLCUC</DownloadableContentPrerequisite>
+    </ClearPopulationTraitorStatusSystemAction>
+
+    <DestroyTraitorPopulationsSystemAction Name="KillTraitorsSystemAction">
+
+        <EntityPrerequisites Location="Self">
+            <PathPrerequisite Flags="Discard">ColonizedStarSystemStateColony</PathPrerequisite>
+            <PathPrerequisite Flags="AlreadyRemovingTraitors" Inverted="true">StarSystemActionRemoveTraitors</PathPrerequisite>
+        </EntityPrerequisites>
+
+        <EntityModifiers Location="Self">
+            <SimulationAlteration DescriptorReference="StarSystemActionKillTraitors"/>
+        </EntityModifiers>
+
+        <CustomCost Instant="true" ResourceName="EmpireEmpirePoint">150 + 25 * Property(Context, Population)</CustomCost>
+        <!-- 50 + 25 * Property(Context, Population) -->
+        <TechnologyPrerequisite Flags="Prerequisite,Technology,Discard">TechnologyDust3</TechnologyPrerequisite>
+        <DownloadableContentPrerequisite Flags="Prerequisite,Discard,UnlockAvailability">DLCUC</DownloadableContentPrerequisite>
+    </DestroyTraitorPopulationsSystemAction>
+  
+    <TimedSystemTraitorsAction Name="RevealTraitorsSystemAction" Duration="10"><!-- 5 -->
+        
+        <EntityPrerequisites Location="Self">
+            <PathPrerequisite Flags="Discard">ColonizedStarSystemStateColony</PathPrerequisite>
+            <PathPrerequisite Flags="ActionInProgress" Inverted="true">StarSystemActionRevealTraitors</PathPrerequisite>
+        </EntityPrerequisites>
+
+        <EntityModifiers Location="Self">
+            <SimulationAlteration DescriptorReference="StarSystemActionRevealTraitors"/>
+        </EntityModifiers>
+
+        <CustomCost Instant="true" ResourceName="EmpireEmpirePoint">150 + 25 * Property(Context, Population)</CustomCost>
+        <!-- 50 + 25 * Property(Context, Population) -->
+        <TechnologyPrerequisite Flags="Prerequisite,Technology,Discard">TechnologyTrade3</TechnologyPrerequisite>
+        <DownloadableContentPrerequisite Flags="Prerequisite,Discard,UnlockAvailability">DLCUC</DownloadableContentPrerequisite>
+    </TimedSystemTraitorsAction>
+</Datatable>
