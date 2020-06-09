@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/Amplitude.Unity.Simulation.SimulationDescriptor.xsd">
-    <SimulationDescriptor Name="FactionTraitIdrinthEmpireTraitorBonus" Type="FactionTrait" IsSerializable="false">
-        <BinaryModifier TargetProperty="NetEmpireResearch" Operation="Addition" Left="2.5" BinaryOperation="Multiplication" Right="${TraitorsCount}" Path="ClassEmpire"/>
-        <BinaryModifier TargetProperty="NetEmpireMoney" Operation="Addition" Left="0.5" BinaryOperation="Multiplication" Right="${TraitorsCount}" Path="ClassEmpire"/>
+    <SimulationDescriptor Name="FactionTraitIdrinthEmpireTraitorBonus" Type="FactionTrait" IsSerializable="true">
+        <Property Name="TraitorMoneyFactor" BaseValue="1"/>
+        <Property Name="TraitorScienceFactor" BaseValue="1"/>
+        <Property Name="BackdoorMoneyFactor" BaseValue="1"/>
+        <Property Name="BackdoorScienceFactor" BaseValue="1"/>
+
+        <BinaryModifier TargetProperty="TraitorMoneyFactor" Operation="Addition" BinaryOperation="Multiplication" Left="0.02" Right="${CurrentTurn}" TooltipHidden="true"/>
+        <BinaryModifier TargetProperty="TraitorScienceFactor" Operation="Addition" BinaryOperation="Multiplication" Left="0.025" Right="${CurrentTurn}" TooltipHidden="true"/>
+        <BinaryModifier TargetProperty="BackdoorMoneyFactor" Operation="Addition" BinaryOperation="Multiplication" Left="0.0125" Right="${CurrentTurn}" TooltipHidden="true"/>
+        <BinaryModifier TargetProperty="BackdoorScienceFactor" Operation="Addition" BinaryOperation="Multiplication" Left="0.02" Right="${CurrentTurn}" TooltipHidden="true"/>
+
+        <Modifier TargetProperty="TraitorMoneyFactor" Operation="Multiplication" Value="0.5" TooltipHidden="true"/>
+        <Modifier TargetProperty="TraitorScienceFactor" Operation="Multiplication" Value="5" TooltipHidden="true"/>
+        <Modifier TargetProperty="BackdoorMoneyFactor" Operation="Multiplication" Value="0.25" TooltipHidden="true"/>
+        <Modifier TargetProperty="BackdoorScienceFactor" Operation="Multiplication" Value="0.5" TooltipHidden="true"/>
+
+        <BinaryModifier TargetProperty="NetEmpireResearch" Operation="Addition" Left="${TraitorScienceFactor}" BinaryOperation="Multiplication" Right="${TraitorsCount}" Path="ClassEmpire" TooltipHidden="true"/>
+        <BinaryModifier TargetProperty="NetEmpireMoney" Operation="Addition" Left="${TraitorMoneyFactor}" BinaryOperation="Multiplication" Right="${TraitorsCount}" Path="ClassEmpire" TooltipHidden="true"/>
+        <BinaryModifier TargetProperty="NetEmpireResearch" Operation="Addition" Left="${BackdoorScienceFactor}" BinaryOperation="Multiplication" Right="$(BackdoorCount)" Path="ClassEmpire" TooltipHidden="true"/>
+        <BinaryModifier TargetProperty="NetEmpireMoney" Operation="Addition" Left="${BackdoorMoneyFactor}" BinaryOperation="Multiplication" Right="$(BackdoorCount)" Path="ClassEmpire" TooltipHidden="true"/>
+
+        <BinaryModifier TargetProperty="NetEmpireResearch" Operation="Addition" Left="0.5" BinaryOperation="Multiplication" Right="${TraitorsCount}" Path="FAKEFORGUI/ClassEmpire"/>
+        <BinaryModifier TargetProperty="NetEmpireMoney" Operation="Addition" Left="5" BinaryOperation="Multiplication" Right="${TraitorsCount}" Path="FAKEFORGUI/ClassEmpire"/>
+        <BinaryModifier TargetProperty="NetEmpireResearch" Operation="Addition" Left="0.25" BinaryOperation="Multiplication" Right="$(BackdoorCount)" Path="FAKEFORGUI/ClassEmpire"/>
+        <BinaryModifier TargetProperty="NetEmpireMoney" Operation="Addition" Left="0.5" BinaryOperation="Multiplication" Right="$(BackdoorCount)" Path="FAKEFORGUI/ClassEmpire"/>
     </SimulationDescriptor>
 </Datatable>

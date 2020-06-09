@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/QuestDefinition.xsd">
-    <QuestDefinition Name="QuestIdrinthEmpireTrait" IsInstant="true" Category="General" SubCategory="">
+    <QuestDefinition Name="QuestIdrinthEmpireTrait" IsInstant="true" SingleCheckPerTurn="true" Category="General" SubCategory="Hacking">
         <Tags>Hidden,BeginTurn</Tags>
         <QuestContextMulti/>
-        <RepetitionRules
-            NumberOfOccurrencesPerGame="1"
-            NumberOfOccurrencesPerEmpire="0"
-            NumberOfConcurrentInstances="0"
-        />
         <Vars>
             <Var IsGlobal="true" VarName="$LivingEmpires">
                 <From Source="$Participants"/>
             </Var>
             <Var VarName="$Effect" StringValue="FactionTraitIdrinthEmpireTraitorBonus"/>
         </Vars>
+        <RepetitionRules NumberOfOccurrencesPerGame="1"/>
         <Steps>
             <Step Name="Step1">
                 <ObjectiveSet>
                     <Objective Name="IET1_1">
                         <Sequence>
-                            <Action_ApplyDescriptor>
+                            <Action_ApplyDescriptor LogAction="true">
                                 <Input_DescriptorName VarName="$Effect"/>
                                 <Input_Targets VarName="$LivingEmpires"/>
                             </Action_ApplyDescriptor>
-                            <!--<Action_Message Message="IdrinthsImprovedHacking">
-                                <Input_Empires VarName="$LivingEmpires"/>
-                            </Action_Message>-->
                         </Sequence>
                     </Objective>
                 </ObjectiveSet>
