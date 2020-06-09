@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/HackingOperationOutcomeDefinition.xsd">
+    <HackingOperationOutcomeMinorRelationTemporaryEffectDefinition Name="HackingOperationOutcomeIncreaseMinorFactionRelation" Level="1" WarnIfMinorUnknown="true">
+        <PathPrerequisite Flags="Discard">EmpireTypeMajor</PathPrerequisite>
+        <InterpreterPrerequisite Flags="Discard" Inverted="false">Path(Target,@'../ClassEmpire,EmpireTypeMinor')</InterpreterPrerequisite>
+        <InterpreterPrerequisite Flags="Discard" Inverted="true">$(IsTraceOperation)</InterpreterPrerequisite>
+        <TemporaryEffectReference Name="MinorRelationIncreaseFromHack"/>
+
+        <StatePrerequisite Inverted="true" Flags="CannotDoThisWhenAtWar" State="DiplomaticRelationStateMinorAdvancedWar"/>
+        <HackingOperationOutcomeDefinitionReference Name="HackingOperationOutcomeSpawnTraitorsSubEffect"/>
+    </HackingOperationOutcomeMinorRelationTemporaryEffectDefinition>
+
+    <HackingOperationOutcomeMinorSuzerainRelationTemporaryEffectDefinition Name="HackingOperationOutcomeDecreaseMinorFactionRelationWithSuzerain" Level="1">
+        <PathPrerequisite Flags="Discard">EmpireTypeMajor</PathPrerequisite>
+        <InterpreterPrerequisite Flags="Discard" Inverted="false">Path(Target,@'../ClassEmpire,EmpireTypeMinor')</InterpreterPrerequisite>
+        <InterpreterPrerequisite Flags="Discard" Inverted="true">$(IsTraceOperation)</InterpreterPrerequisite>
+        <TemporaryEffectReference Name="MinorRelationDecreaseFromHack"/>
+        <HackingOperationOutcomeDefinitionReference Name="HackingOperationOutcomeSpawnTraitorsSubEffect"/>
+    </HackingOperationOutcomeMinorSuzerainRelationTemporaryEffectDefinition>
+
+    <HackingOperationOutcomeAcademyIncreaseContributionDefinition Name="HackingOperationOutcomeAcademyIncreaseContribution" Level="1" ContributionIncreasePercent="5">
+        <PathPrerequisite Flags="Discard">EmpireTypeMajor</PathPrerequisite>
+        <InterpreterPrerequisite Flags="Discard" Inverted="false">Path(Target,@'../ClassEmpire,EmpireTypeAcademy')</InterpreterPrerequisite>
+        <InterpreterPrerequisite Flags="Discard" Inverted="true">$(IsTraceOperation)</InterpreterPrerequisite>
+        <HackingOperationOutcomeDefinitionReference Name="HackingOperationOutcomeSpawnTraitorsSubEffect"/>
+    </HackingOperationOutcomeAcademyIncreaseContributionDefinition>
+</Datatable>

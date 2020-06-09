@@ -2,4 +2,6 @@
 <Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <LocalizationPair Name="%FactionTraitIdrinthEmpireTraitorBonusTitle">Hacking Expertise</LocalizationPair>
     <LocalizationPair Name="%FactionTraitIdrinthEmpireTraitorBonusDescription">Having people outside the empire working for you helps our scientists by providing detailed reports and new viewpoints. Additionally they sometimes manage to make a bit of additional dust by smuggling for the greater good.</LocalizationPair>
+    <LocalizationPair Name="%FactionTraitIdrinthEmpireTraitorBonusTooltipScience">+5[scienceColored] per Traitor</LocalizationPair>
+    <LocalizationPair Name="%FactionTraitIdrinthEmpireTraitorBonusTooltipMoney">+0.5[dustColored] per Traitor</LocalizationPair>
 </Datatable>

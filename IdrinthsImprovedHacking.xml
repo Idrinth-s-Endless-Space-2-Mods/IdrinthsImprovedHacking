@@ -28,9 +28,9 @@ The code is at https://github.com/Idrinth-s-Endless-Space-2-Mods/IdrinthsImprove
             </DatabasePlugin>
             <DatabasePlugin DataType="EntityActionDefinition, Assembly-CSharp">
                 <ExtraTypes>
-                    <Extratype DataType="ClearPopulationTraitorStatusSystemActionDefinition, Assembly-CSharp"/>
-                    <Extratype DataType="DestroyTraitorPopulationsSystemActionDefinition, Assembly-CSharp"/>
-                    <Extratype DataType="TimedSystemTraitorsActionDefinition, Assembly-CSharp"/>
+                    <ExtraType DataType="ClearPopulationTraitorStatusSystemActionDefinition, Assembly-CSharp"/>
+                    <ExtraType DataType="DestroyTraitorPopulationsSystemActionDefinition, Assembly-CSharp"/>
+                    <ExtraType DataType="TimedSystemTraitorsActionDefinition, Assembly-CSharp"/>
                 </ExtraTypes>
                 <FilePath>Simulation/EntityActions[Idrinth][*].xml</FilePath>
             </DatabasePlugin>
@@ -58,6 +58,9 @@ The code is at https://github.com/Idrinth-s-Endless-Space-2-Mods/IdrinthsImprove
             </DatabasePlugin>
             <DatabasePlugin DataType="FactionTrait, Assembly-CSharp" Priority="20">
                 <FilePath>Simulation/FactionTraits[Idrinth][*].xml</FilePath>
+            </DatabasePlugin>
+            <DatabasePlugin DataType="HackingOperationOutcomeDefinition, Assembly-CSharp" Priority="1">
+                <FilePath>Simulation/HackingOperationOutcomeDefinitions[Idrinth][*].xml</FilePath>
             </DatabasePlugin>
             <DatabasePlugin DataType="Amplitude.Unity.Gui.GuiElement, Assembly-CSharp-firstpass"  Priority="20">
                 <ExtraTypes>

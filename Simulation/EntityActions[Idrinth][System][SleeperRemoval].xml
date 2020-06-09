@@ -2,7 +2,7 @@
 
 <Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/EntityActionDefinition.xsd">
     <!-- System traitors actions. -->
-    <ClearPopulationTraitorStatusSystemAction Name="RemoveTraitorsSystemAction" Duration="15" TraitorsRemovedPerTick="0.2"><!-- 5 -->
+    <ClearPopulationTraitorStatusSystemAction Name="RemoveTraitorsSystemAction" Duration="15" TraitorsRemovedPerTick="1"><!-- 5 -->
 
         <EntityPrerequisites Location="Self">
             <PathPrerequisite Flags="Discard">ColonizedStarSystemStateColony</PathPrerequisite>

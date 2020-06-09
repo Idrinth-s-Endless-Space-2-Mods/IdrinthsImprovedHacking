@@ -4,4 +4,12 @@
         <Title>%FactionTraitIdrinthEmpireTraitorBonusTitle</Title>
         <Description>%FactionTraitIdrinthEmpireTraitorBonusDescription</Description>
     </ExtendedGuiElement>
+    <ExtendedGuiElement Name="TraitorScienceFactor">
+        <Title>%FactionTraitIdrinthEmpireTraitorBonusTitle</Title>
+        <Description>%FactionTraitIdrinthEmpireTraitorBonusDescription</Description>
+    </ExtendedGuiElement>
+    <ExtendedGuiElement Name="TraitorMoneyFactor">
+        <Title>%FactionTraitIdrinthEmpireTraitorBonusTitle</Title>
+        <Description>%FactionTraitIdrinthEmpireTraitorBonusDescription</Description>
+    </ExtendedGuiElement>
 </Datatable>
